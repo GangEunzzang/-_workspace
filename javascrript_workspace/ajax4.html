@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>  
+<meta charset="UTF-8">
+<title> Ajax </title>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js></script>
+<script>
+$(function() {
+	$.ajax({
+		url:"http://rkddms0420.dothome.co.kr/ajaxDB2.php",
+		dataType:"json",
+		success:function(data) {
+			if(data.length > 0) {
+				var tb = $("<table border='1' />");
+				for(var i in data) {
+					var name = data[i].name;
+					var price = data[i].price;
+
+					var row = $("<tr />").append(
+						$("<td />").text(name),
+						$("<td />").text(price)
+					);
+
+					tb.append(row);
+				}
+				$(".wrap").append(tb);
+			}
+		}
+	});
+});
+</script>
+</head>
+<body>
+  <div class="wrap"></div>
+</body>
+</html>

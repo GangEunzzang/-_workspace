@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event 처리 정리</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function func1(){
+            console.log("btn1");
+        };
+
+        window.onload = function(){
+            document.getElementById("btn2").onclick = function(){
+            console.log("btn2");
+            };
+        };
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#btn3").click(function(){
+                console.log("btn3");
+            });
+            
+            $("#btn4").on("click", function(){
+            console.log("btn4");
+        });
+        });
+
+
+        
+
+    </script>
+</head>
+<body>
+    <button id="btn1" onclick="func1()"> btn1 </button>
+    <button id="btn2"> btn2 </button>
+    <button id="btn3"> btn3 </button>
+    <button id="btn4"> btn4 </button>
+    
+</body>
+</html>

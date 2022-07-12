@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".txt1").animate({marginLeft:"200px"},5000)
+                    .animate({marginTop:"200px"},5000)
+                    .animate({marginLeft:0},5000)  
+                    .animate({marginTop:0},5000);
+            $("#btn1").click(function(){
+                $(".txt1").stop(true,true);
+            });
+            $("#btn2").click(function(){
+                $(".txt1").stop(true,false);
+            });
+            $("#btn3").click(function(){
+                $(".txt1").stop(false,true);
+            });
+            $("#btn4").click(function(){
+                //$(".txt1").stop(false,false); // 기본값 밑에와 같다.
+                $(".txt1").stop();
+            });  
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button id="btn1">stop(true,true)</button>
+        <button id="btn2">stop(true,false)</button>
+        <button id="btn3">stop(false,true)</button>
+        <button id="btn4">stop(false,false)</button>
+    </p>
+    <p class="txt1">내용1</p >
+
+</body>
+</html>
