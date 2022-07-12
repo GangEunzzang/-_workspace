@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> TIS.Edu </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+    // iframe resize
+    function autoResize(i)
+    {
+        (i).height=0;
+        var iframeHeight=
+        (i).contentWindow.document.body.scrollHeight;
+        (i).height=iframeHeight+20;
+    }
+    </script>
+
+<script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links in navbar + footer link
+    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+  
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+  
+      // Prevent default anchor click behavior
+      event.preventDefault();
+  
+      // Store hash
+      var hash = this.hash;
+  
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+  
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+        });
+      } // End if
+    });
+  })
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+  <style>
+      
+    @font-face {
+            font-family: 서울남산체;
+            src: url(img/08SeoulNamsanB_0.ttf);
+      }
+
+    
+    h3{
+      font-weight: bolder;
+      font-size: 45px;
+    }
+    body{
+        font-family: 서울남산체;
+    }
+
+    .container{
+          padding: 80px 120px;
+      }
+    
+    #map{
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+
+    .subject {
+        border: 10px solid #ddd;
+        margin-bottom: 25px;
+        width: 80%;
+        height: 80%;
+        opacity: 0.7;
+        transition: 1s;
+      }
+    .subject:hover {
+        border-color: rgb(29,29,29);
+      }
+
+    .carousel-inner img {
+        width: 100%; /* Set width to 100% */
+        height: 900px    !important;
+        margin: auto;
+    }
+    
+    .carousel-caption h3 {
+    color: #fff !important;
+    }
+
+  footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+
+  footer a {
+    color: #f5f5f5;
+  }
+
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+
+    @media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+    .container{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    }
+
+    @media screen and (max-width: 600px){
+        div[class *= col-sm]{
+            width: 100%;
+            height: 100%;
+            margin-top: 150px;
+            box-sizing: border-box;
+        }
+    }
+    
+    #myNavbar{
+      background-color: rgb(255,255,255);
+    }
+    
+    
+    
+
+
+  </style>
+</head>
+<body id ="myPage">
+<!-- 네비게이션 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div>
+            <a href="#" ><img src = "img/logo.jpg"></a>
+            </div>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#myPage"  data-toggle="collapse" data-target=".navbar-collapse.in">About</a></li>
+              <li><a href="#curriculumn"  data-toggle="collapse" data-target=".navbar-collapse.in">Curriculumn</a></li>
+              <li><a href="#map "  data-toggle="collapse" data-target=".navbar-collapse.in">Map</a></li>
+              <li><a href="#board"  data-toggle="collapse" data-target=".navbar-collapse.in">Board</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<!-- 네비게이션 끝 -->
+                        <!-- 캐러셀 -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+      
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="img/pic1.jpg" alt="New York">
+            <div class="carousel-caption">
+              <h3>Android</h3>
+              <p>Android Native App Development</p>
+            </div>
+          </div>
+      
+          <div class="item">
+            <img src="img/pic2.jpg" alt="Chicago">
+            <div class="carousel-caption">
+              <h3>Chicago</h3>
+              <p>Thank you, Chicago - A night we won't forget.</p>
+            </div>
+          </div>
+      
+          <div class="item">
+            <img src="img/pic3.jpg" alt="Los Angeles">
+            <div class="carousel-caption">
+              <h3>LA</h3>
+              <p>Even though the traffic was a mess, we had the best time.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="img/pic4.jpg" alt="Chicago">
+            <div class="carousel-caption">
+              <h3>Chicago</h3>
+              <p>Thank you, Chicago - A night we won't forget.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="img/pic5.jpg" alt="Chicago">
+            <div class="carousel-caption">
+              <h3>Chicago</h3>
+              <p>Thank you, Chicago - A night we won't forget.</p>
+            </div>
+          </div>
+
+        </div>
+
+
+      
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+                       <!-- 캐러셀 -->
+
+    <div class="container text-center" >
+        <h1>TIS정보기술 교육센터</h1>
+        <p>- TIS 정보기술 교육센터는 정부지원 IT전문 교육기관입니다.</p>
+    </div>
+    <div class="container text-center" id="curriculumn">
+        <h3> 교육과정</h3>
+        <p>- 국가기반기술 전문과정</p>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <p><strong>HTML5</strong></p><br>
+            <img class="img-circle subject"src="img/html.png" alt="html5" width="255" height="255">
+          </div>
+          <div class="col-sm-4">
+            <p><strong>CSS3</strong></p><br>
+            <img class="img-circle subject" src="img/css3.png" alt="css3" width="255" height="255">
+          </div>
+          <div class="col-sm-4">
+            <p><strong>javascript</strong></p><br>
+            <img class="img-circle subject" src="img/js.png" alt="javascript" width="255" height="255">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 카카오맵 ----------------------------------------------->
+      <div id="map" class="container-fluid">
+        <h1 class="text-center">오시는 길</h1>
+       <div id="kakaomap" style="width: 100%;height: 500px;"></div>
+    </div>
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=19debc2a9776573b021519a051f089dd"></script>
+      <script> 
+
+          var mapContainer = document.getElementById('kakaomap'), // 지도를 표시할 div 
+           mapOption = { 
+                  center: new daum.maps.LatLng(37.534453, 126.898561), // 지도의 중심좌표
+                  level: 3 // 지도의 확대 레벨
+              };
+
+          var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+          // 마커가 표시될 위치입니다 
+          var markerPosition  = new daum.maps.LatLng(37.52521106890908, 126.89135869527159); 
+    
+          // 마커를 생성합니다
+          var marker = new daum.maps.Marker({
+              position: markerPosition
+          });
+
+          // 마커가 지도 위에 표시되도록 설정합니다
+          marker.setMap(map);
+
+      </script>
+      <!-- 카카오맵.끝.-->
+
+      <!-- 게시판 -->
+      <div class="container" id="board">
+        <h3 class="text-center">BOARD</h3>
+        <iframe id="iframe1" src="http://rkddms0420.dothome.co.kr/g5/bbs/board.php?bo_table=board001" width="100%"  onload="autoResize(this)" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+
+      
+      <div class="container" id="board">
+         <h3 class="text-center">BOARD</h3>
+         <iframe id="iframe1" src="http://rkddms0420.dothome.co.kr/g5/bbs/board.php?bo_table=board002" width="100%"  onload="autoResize(this)" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+         </div>
+
+
+      <!-- 푸터 -->
+      <footer class="text-center">
+        <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+          <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br><br>
+        TIS.EDU &copy; All rights reserved.
+      </footer>
+
+</body>
+</html>
