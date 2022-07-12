@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <form>
+    <input name="register" value="haha">
+    <input type="submit" value="보내기" name="sub">
+  </form>
+  <input type="button" onclick="request()" value="과일사세요"> <br>
+  <p id="result"></p>
+  <script>
+    function ajaxPost(){
+      var params = {
+        name : "홍길동"
+        ,userNo : 10
+      }
+
+      $.ajax({
+        url: "/ajaxPost",
+        type: "POST",
+        data: params,
+        success: function(data){
+          console.log(data.resultCd);
+          console.log(data.resultMsg);
+        },
+        error: function(){
+          alert("데이터 통신중 에러발생");
+        }
+      });
+    }
+
+
+    function request(){
+
+      $.ajax({
+        url: "./register.do",
+        type: "POST",
+
+        success : function(data){
+          $(data).each(function(){
+            alert(this.price + " " + this.name + " " + this.introduce);
+          });
+        },
+        error :function(){
+          alert("request error!");
+        }
+
+      });
+
+    }
+  </script>
+</body>
+</html>
